@@ -8,6 +8,7 @@
 - Add verified KvK, BTW and social-media information if required.
 - Connect and verify the final domain name.
 - Replace relative Open Graph image path with an absolute production URL after the final GitHub Pages or custom-domain address is known.
+- Add the new project photos to the gallery once the client sends them.
 
 ## Optional future improvements
 - Add verified client testimonials.

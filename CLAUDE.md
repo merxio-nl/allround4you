@@ -32,3 +32,61 @@ After each change, verify:
 ## Workflow
 One task -> local test -> one clear commit -> push -> published-site check.
 Keep `main` stable and suitable for client review.
+
+## Git workflow and approval gates
+
+Claude may inspect the repository, edit approved files, run safe checks, and prepare Git actions.
+
+Claude must never decide independently to commit, push, publish, deploy, create or switch branches, merge, revert, reset, clean, or rewrite Git history.
+
+### Approval levels
+
+The following phrases are explicit approval gates:
+
+1. "Только анализ"
+   - Inspect files and Git state.
+   - Do not modify files.
+   - Do not run Git commands that change repository state.
+
+2. "Разрешаю локальные изменения"
+   - Modify only files explicitly related to the approved task.
+   - Do not commit.
+   - Do not push.
+   - Do not publish or deploy.
+
+3. "Разрешаю локальный commit"
+   - First show `git status` and a concise diff summary.
+   - Commit only files related to the current task.
+   - Prefer explicit file staging over `git add .`.
+   - Do not push.
+
+4. "Разрешаю push в origin/main"
+   - First confirm the active branch is `main`.
+   - Confirm the exact commit that will be pushed.
+   - Push only to `origin/main`.
+   - Do not create branches, tags, pull requests, or additional commits.
+
+### Mandatory Git rules
+
+- Never commit automatically after editing files.
+- Never push automatically after a commit.
+- Never publish or deploy automatically.
+- One logical task per commit.
+- Use short, descriptive commit messages in English.
+- Before proposing a commit, show:
+  - active branch;
+  - `git status`;
+  - changed files;
+  - concise diff summary;
+  - checks performed.
+- After committing, report:
+  - commit hash;
+  - commit message;
+  - files included;
+  - whether the commit is local or pushed.
+- Never use `git push --force`.
+- Never use `git reset --hard`.
+- Never use `git clean -fd`.
+- Never rewrite published history.
+- For already pushed changes, prefer a new revert commit instead of deleting history.
+- If the repository state is unclear or unexpected, stop and ask for confirmation.
