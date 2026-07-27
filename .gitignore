@@ -2,3 +2,6 @@
 Thumbs.db
 .vscode/
 *.log
+
+# Temporary client source material, not for production commit
+allround4you-new-photos/

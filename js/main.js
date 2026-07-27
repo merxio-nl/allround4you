@@ -73,4 +73,9 @@ document.addEventListener('keydown', (event) => {
     closeLightbox();
     setMenuState(false);
   }
+
+  if (event.key === 'Tab' && lightbox?.classList.contains('is-open')) {
+    event.preventDefault();
+    lightboxClose?.focus();
+  }
 });
