@@ -2,6 +2,19 @@
 
 All notable project changes are documented here.
 
+## [1.2.0] - 2026-07-29
+### Added
+- Eight new portfolio photos (work-14 to work-21, WebP) selected and optimized from client-supplied final material.
+- Four new services: Kerkrestauratie, Horeca-inrichting, Sauna's & badhuizen, Maatwerk meubels.
+- KVK and BTW numbers in the footer.
+
+### Changed
+- Projects section intro text lightly updated to reflect the larger gallery.
+
+### Preserved
+- Existing visual design, layout, gallery grid, service-grid layout and lightbox behavior.
+- IBAN / bank account details are not published anywhere on the site.
+
 ## [1.1.0] - 2026-07-26
 ### Added
 - Five new portfolio photos (work-9 to work-13, WebP) selected and optimized from client-supplied material.
